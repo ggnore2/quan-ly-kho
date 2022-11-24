@@ -19,6 +19,7 @@ public class BoPhanNhapGiaoDich implements IBoPhanVoiDatabase {
 
     }
 
+    // tim tra lai cac vi tri trong database
     public static ArrayList<Integer> timGiaoDichTheoTenHang(String tenHang) {
         ArrayList<Integer> ketQua = new ArrayList<Integer>();
         String tieuChuanHoaTenHang = tenHang.toLowerCase().trim();
@@ -208,4 +209,5 @@ public class BoPhanNhapGiaoDich implements IBoPhanVoiDatabase {
         }
         return ketQua;
     }
+
 }
