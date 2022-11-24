@@ -7,7 +7,7 @@ public class BoPhanNhapXuatKho implements IBoPhanVoiDatabase {
         // tao hang.txt
         if (!Files.exists(Path.of(IBoPhanVoiDatabase.hangPath))) {
             try {
-                String contentToWrite = "ten,loai,so luong,ghi chu\n";
+                String contentToWrite = "ten hang,loai hang,so luong,ghi chu\n";
                 Files.writeString(Path.of(IBoPhanVoiDatabase.hangPath), contentToWrite);
             } catch (Exception e) {
                 System.out.println(e.getMessage());
