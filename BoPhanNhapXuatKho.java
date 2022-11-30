@@ -148,6 +148,55 @@ public class BoPhanNhapXuatKho implements IBoPhanVoiDatabase {
         }
         return ketQua;
     }
+    
+    public void xoaMotHangTheoTenKho(String TenKho) {
+
+    try {
+        ArrayList<String> danhSachKho = new ArrayList<String>(
+                Arrays.asList(Files.readString(Path.of(this.khoPat)).split("\n")));
+        int index = -1;
+        for (int i = 1; i < danhSachKho.size(); i++) {
+            Kho tempKho = Kho.taoKho(danhSachKho.get(i), this.attributeSeparator);
+            if (tempKho.getTenKho().toLowerCase().trim().equals(TenKho.toLowerCase().trim())) {
+                index = i;
+                break;
+            }
+        }
+        if (index > 0) {
+            danhSachKho.remove(index);
+        }
+        String newDatabase = String.join("\n", danhSachKho);
+        FileWriter writer = new FileWriter(new File(this.khoPath));
+        writer.write(newDatabase);
+        writer.close();
+    } catch (Exception e) {
+        System.out.printf("%s\n", e.getMessage());
+    }
+}
+public void xoaMotHangTheoDiaDiem(String DiaDiem) {
+
+    try {
+        ArrayList<String> danhSachKho = new ArrayList<String>(
+                Arrays.asList(Files.readString(Path.of(this.khoPat)).split("\n")));
+        int index = -1;
+        for (int i = 1; i < danhSachKho.size(); i++) {
+            Kho tempKho = Kho.taoKho(danhSachKho.get(i), this.attributeSeparator);
+            if (tempKho.getDiaDiem().toLowerCase().trim().equals(DiaDiem.toLowerCase().trim())) {
+                index = i;
+                break;
+            }
+        }
+        if (index > 0) {
+            danhSachKho.remove(index);
+        }
+        String newDatabase = String.join("\n", danhSachKho);
+        FileWriter writer = new FileWriter(new File(this.khoPath));
+        writer.write(newDatabase);
+        writer.close();
+    } catch (Exception e) {
+        System.out.printf("%s\n", e.getMessage());
+    }
+}
 
     // hang
     public static ArrayList<Integer> timHangTheoTenHang(String tenHang) {
@@ -243,6 +292,79 @@ public class BoPhanNhapXuatKho implements IBoPhanVoiDatabase {
         }
         return ketQua;
     }
+    
+    public void xoaMotHangTheoTenHang(String TenHang) {
+
+    try {
+        ArrayList<String> danhSachHang = new ArrayList<String>(
+                Arrays.asList(Files.readString(Path.of(this.hangPat)).split("\n")));
+        int index = -1;
+        for (int i = 1; i < danhSachHang.size(); i++) {
+            Hang tempHang = Hang.taoHang(danhSachHang.get(i), this.attributeSeparator);
+            if (tempHang.getTenHang().toLowerCase().trim().equals(TenHang.toLowerCase().trim())) {
+                index = i;
+                break;
+            }
+        }
+        if (index > 0) {
+            danhSachHang.remove(index);
+        }
+        String newDatabase = String.join("\n", danhSachHang);
+        FileWriter writer = new FileWriter(new File(this.hangPath));
+        writer.write(newDatabase);
+        writer.close();
+    } catch (Exception e) {
+        System.out.printf("%s\n", e.getMessage());
+    }
+}
+public void xoaMotHangTheoLoaiHang(String TenLoaiHang) {
+
+    try {
+        ArrayList<String> danhSachHang = new ArrayList<String>(
+                Arrays.asList(Files.readString(Path.of(this.hangPat)).split("\n")));
+        int index = -1;
+        for (int i = 1; i < danhSachHang.size(); i++) {
+            Hang tempHang = Hang.taoHang(danhSachHang.get(i), this.attributeSeparator);
+            if (tempHang.getTenLoaiHang().toLowerCase().trim().equals(TenLoaiHang.toLowerCase().trim())) {
+                index = i;
+                break;
+            }
+        }
+        if (index > 0) {
+            danhSachHang.remove(index);
+        }
+        String newDatabase = String.join("\n", danhSachHang);
+        FileWriter writer = new FileWriter(new File(this.hangPath));
+        writer.write(newDatabase);
+        writer.close();
+    } catch (Exception e) {
+        System.out.printf("%s\n", e.getMessage());
+    }
+}
+public void xoaMotHangTheoSoLuongHang(long SL) {
+    try {
+        ArrayList<String> danhSachHang = new ArrayList<String>(
+                Arrays.asList(Files.readString(Path.of(this.hangPath)).split("\n")));
+        int index = -1;
+        for (int i = 1; i < danhSachHang.size(); i++) {
+            Hang tempHang = Hang.taoHang(danhSachHang.get(i), this.attributeSeparator);
+            if (tempHang.getSL() == SL) {
+                index = i;
+                break;
+            }
+        }
+        if (index > 0) {
+            danhSachHang.remove(index);
+        }
+        String newDatabase = String.join("\n", danhSachHang);
+        FileWriter writer = new FileWriter(new File(this.hangPath));
+        writer.write(newDatabase);
+        writer.close();
+    } catch (Exception e) {
+        System.out.printf("%s\n", e.getMessage());
+    }
+}
+
 
     // kho va hang
     public static ArrayList<Integer> timKhoVaHangTheoTenKho(String tenKho) {
@@ -382,5 +504,131 @@ public class BoPhanNhapXuatKho implements IBoPhanVoiDatabase {
             System.out.println(e.getMessage());
         }
         return ketQua;
+    }
+}
+
+public void xoaMotHangTheoTenKho(String TenKho) {
+
+    try {
+        ArrayList<String> danhSachkhoVaHang = new ArrayList<String>(
+                Arrays.asList(Files.readString(Path.of(this.khoVaHangPath)).split("\n")));
+        int index = -1;
+        for (int i = 1; i < danhSachkhoVaHang.size(); i++) {
+            KhoVaHang tempkhoVaHang = khoVaHang.taokhoVaHang(danhSachkhoVaHang.get(i), this.attributeSeparator);
+            if (tempkhoVaHang.getTenKho().toLowerCase().trim().equals(TenKho.toLowerCase().trim())) {
+                index = i;
+                break;
+            }
+        }
+        if (index > 0) {
+            danhSachkhoVaHang.remove(index);
+        }
+        String newDatabase = String.join("\n", danhSachkhoVaHang);
+        FileWriter writer = new FileWriter(new File(this.khoVaHangPath));
+        writer.write(newDatabase);
+        writer.close();
+    } catch (Exception e) {
+        System.out.printf("%s\n", e.getMessage());
+    }
+}
+public void xoaMotHangTheoDiaDiem(String DiaDiem) {
+
+    try {
+        ArrayList<String> danhSachkhoVaHang = new ArrayList<String>(
+                Arrays.asList(Files.readString(Path.of(this.khoVaHangPath)).split("\n")));
+        int index = -1;
+        for (int i = 1; i < danhSachkhoVaHang.size(); i++) {
+            KhoVaHang tempkhoVaHang = khoVaHang.taokhoVaHang(danhSachkhoVaHang.get(i), this.attributeSeparator);
+            if (tempkhoVaHang.getDiaDiem().toLowerCase().trim().equals(DiaDiem.toLowerCase().trim())) {
+                index = i;
+                break;
+            }
+        }
+        if (index > 0) {
+            danhSachkhoVaHang.remove(index);
+        }
+        String newDatabase = String.join("\n", danhSachkhoVaHang);
+        FileWriter writer = new FileWriter(new File(this.khoVaHangPath));
+        writer.write(newDatabase);
+        writer.close();
+    } catch (Exception e) {
+        System.out.printf("%s\n", e.getMessage());
+    }
+}
+
+public void xoaMotHangTheoTenHang(String TenHang) {
+
+    try {
+        ArrayList<String> danhSachkhoVaHang = new ArrayList<String>(
+                Arrays.asList(Files.readString(Path.of(this.khoVaHangPath)).split("\n")));
+        int index = -1;
+        for (int i = 1; i < danhSachkhoVaHang.size(); i++) {
+            KhoVaHang tempkhoVaHang = khoVaHang.taokhoVaHang(danhSachkhoVaHang.get(i), this.attributeSeparator);
+            if (tempkhoVaHang.getTenHang().toLowerCase().trim().equals(TenHang.toLowerCase().trim())) {
+                index = i;
+                break;
+            }
+        }
+        if (index > 0) {
+            danhSachkhoVaHang.remove(index);
+        }
+        String newDatabase = String.join("\n", danhSachkhoVaHang);
+        FileWriter writer = new FileWriter(new File(this.khoVaHangPath));
+        writer.write(newDatabase);
+        writer.close();
+    } catch (Exception e) {
+        System.out.printf("%s\n", e.getMessage());
+    }
+}
+
+public void xoaMotHangTheoLoaiHang(String LoaiHang) {
+
+    try {
+        ArrayList<String> danhSachkhoVaHang = new ArrayList<String>(
+                Arrays.asList(Files.readString(Path.of(this.khoVaHangPath)).split("\n")));
+        int index = -1;
+        for (int i = 1; i < danhSachkhoVaHang.size(); i++) {
+            KhoVaHang tempkhoVaHang = khoVaHang.taokhoVaHang(danhSachkhoVaHang.get(i), this.attributeSeparator);
+            if (tempkhoVaHang.getLoaiHang().toLowerCase().trim().equals(LoaiHang.toLowerCase().trim())) {
+                index = i;
+                break;
+            }
+        }
+        if (index > 0) {
+            danhSachkhoVaHang.remove(index);
+        }
+        String newDatabase = String.join("\n", danhSachkhoVaHang);
+        FileWriter writer = new FileWriter(new File(this.khoVaHangPath));
+        writer.write(newDatabase);
+        writer.close();
+    } catch (Exception e) {
+        System.out.printf("%s\n", e.getMessage());
+    }
+}
+
+
+
+
+public void xoaMotHangTheoSoLuongkhoVaHang(long SL) {
+    try {
+        ArrayList<String> danhSachkhoVaHang = new ArrayList<String>(
+                Arrays.asList(Files.readString(Path.of(this.khoVaHangPath)).split("\n")));
+        int index = -1;
+        for (int i = 1; i < danhSachkhoVaHang.size(); i++) {
+            KhoVaHang tempkhoVaHang = KhoVaHang.taokhoVaHang(danhSachkhoVaHang.get(i), this.attributeSeparator);
+            if (tempkhoVaHang.getSL() == SL) {
+                index = i;
+                break;
+            }
+        }
+        if (index > 0) {
+            danhSachkhoVaHang.remove(index);
+        }
+        String newDatabase = String.join("\n", danhSachkhoVaHang);
+        FileWriter writer = new FileWriter(new File(this.khoVaHangPath));
+        writer.write(newDatabase);
+        writer.close();
+    } catch (Exception e) {
+        System.out.printf("%s\n", e.getMessage());
     }
 }
