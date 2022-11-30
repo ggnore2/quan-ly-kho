@@ -507,7 +507,7 @@ public void xoaMotHangTheoSoLuongHang(long SL) {
     }
 }
 
-public void xoaMotHangTheoTenKho(String TenKho) {
+public void xoaMotHangTheoTenKhoinKhoVaHang(String TenKhoinKhoVaHang) {
 
     try {
         ArrayList<String> danhSachkhoVaHang = new ArrayList<String>(
@@ -515,7 +515,7 @@ public void xoaMotHangTheoTenKho(String TenKho) {
         int index = -1;
         for (int i = 1; i < danhSachkhoVaHang.size(); i++) {
             KhoVaHang tempkhoVaHang = khoVaHang.taokhoVaHang(danhSachkhoVaHang.get(i), this.attributeSeparator);
-            if (tempkhoVaHang.getTenKho().toLowerCase().trim().equals(TenKho.toLowerCase().trim())) {
+            if (tempkhoVaHang.getTenKhoinKhoVaHang().toLowerCase().trim().equals(TenKhoinKhoVaHang.toLowerCase().trim())) {
                 index = i;
                 break;
             }
