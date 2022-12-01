@@ -210,5 +210,279 @@ public class BoPhanNhapGiaoDich implements IBoPhanVoiDatabase {
         }
         return ketQua;
     }
+    //xoa
+    public static void xoaGiaoDichTheoTenHang(String TenHang) {
+
+        try {
+            File file = new File(IBoPhanVoiDatabase.giaoDichPath);
+            InputStream inputStream = new FileInputStream(file);
+            InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
+            BufferedReader reader = new BufferedReader(inputStreamReader);
+    
+            String line = "";
+            ArrayList<String> temp = new ArrayList<String>();
+            while((line = reader.readLine()) != null){
+                temp.add(line);
+            }
+            for (int i = 1; i < temp.size(); i++) {
+                ArrayList<String> tach = new ArrayList<String>(Arrays.asList(temp.get(i).split(", ")));
+                String ten = tach.get(0);
+                if (ten.equals(TenHang)) {
+                    temp.remove(i);
+                }
+            }
+            OutputStream outputStream = new FileOutputStream(file);
+            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream);
+    
+            for (String item : temp){
+                outputStreamWriter.write(item);
+             
+                outputStreamWriter.write("\n");
+            }
+            outputStreamWriter.flush();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+    public static void xoaGiaoDichTheoLoaiHang(String LoaiHang) {
+
+        try {
+            File file = new File(IBoPhanVoiDatabase.giaoDichPath);
+            InputStream inputStream = new FileInputStream(file);
+            InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
+            BufferedReader reader = new BufferedReader(inputStreamReader);
+    
+            String line = "";
+            ArrayList<String> temp = new ArrayList<String>();
+            while((line = reader.readLine()) != null){
+                temp.add(line);
+            }
+            for (int i = 1; i < temp.size(); i++) {
+                ArrayList<String> tach = new ArrayList<String>(Arrays.asList(temp.get(i).split(", ")));
+                String ten = tach.get(1);
+                if (ten.equals(LoaiHang)) {
+                    temp.remove(i);
+                }
+            }
+            OutputStream outputStream = new FileOutputStream(file);
+            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream);
+    
+            for (String item : temp){
+                outputStreamWriter.write(item);
+             
+                outputStreamWriter.write("\n");
+            }
+            outputStreamWriter.flush();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+    public static void xoaGiaoDichTheoSoLuong(int soLuong) {
+
+        try {
+            File file = new File(IBoPhanVoiDatabase.giaoDichPath);
+            InputStream inputStream = new FileInputStream(file);
+            InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
+            BufferedReader reader = new BufferedReader(inputStreamReader);
+    
+            String line = "";
+            ArrayList<String> temp = new ArrayList<String>();
+            while((line = reader.readLine()) != null){
+                temp.add(line);
+            }
+            for (int i = 1; i < temp.size(); i++) {
+                ArrayList<String> tach = new ArrayList<String>(Arrays.asList(temp.get(i).split(", ")));
+                int  ten = Integer.valueOf(tach.get(2));
+                if (ten == soLuong) {
+                    temp.remove(i);
+                }
+            }
+            OutputStream outputStream = new FileOutputStream(file);
+            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream);
+    
+            for (String item : temp){
+                outputStreamWriter.write(item);
+             
+                outputStreamWriter.write("\n");
+            }
+            outputStreamWriter.flush();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+    public static void xoaGiaoDichTheoLoaiGiaoDich(String LoaiGiaoDich) {
+
+        try {
+            File file = new File(IBoPhanVoiDatabase.giaoDichPath);
+            InputStream inputStream = new FileInputStream(file);
+            InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
+            BufferedReader reader = new BufferedReader(inputStreamReader);
+    
+            String line = "";
+            ArrayList<String> temp = new ArrayList<String>();
+            while((line = reader.readLine()) != null){
+                temp.add(line);
+            }
+            for (int i = 1; i < temp.size(); i++) {
+                ArrayList<String> tach = new ArrayList<String>(Arrays.asList(temp.get(i).split(", ")));
+                String ten = tach.get(3);
+                if (ten.equals(LoaiGiaoDich)) {
+                    temp.remove(i);
+                }
+            }
+            OutputStream outputStream = new FileOutputStream(file);
+            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream);
+    
+            for (String item : temp){
+                outputStreamWriter.write(item);
+             
+                outputStreamWriter.write("\n");
+            }
+            outputStreamWriter.flush();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+    public static void xoaGiaoDichTheoGiaoTongThe(int giaTongThe) {
+
+        try {
+            File file = new File(IBoPhanVoiDatabase.giaoDichPath);
+            InputStream inputStream = new FileInputStream(file);
+            InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
+            BufferedReader reader = new BufferedReader(inputStreamReader);
+    
+            String line = "";
+            ArrayList<String> temp = new ArrayList<String>();
+            while((line = reader.readLine()) != null){
+                temp.add(line);
+            }
+            for (int i = 1; i < temp.size(); i++) {
+                ArrayList<String> tach = new ArrayList<String>(Arrays.asList(temp.get(i).split(", ")));
+                int  ten = Integer.valueOf(tach.get(4));
+                if (ten == giaTongThe) {
+                    temp.remove(i);
+                }
+            }
+            OutputStream outputStream = new FileOutputStream(file);
+            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream);
+    
+            for (String item : temp){
+                outputStreamWriter.write(item);
+             
+                outputStreamWriter.write("\n");
+            }
+            outputStreamWriter.flush();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+    public static void xoaGiaoDichTheoThoiDiem(Date thoiDiem) {
+
+        try {
+            File file = new File(IBoPhanVoiDatabase.giaoDichPath);
+            InputStream inputStream = new FileInputStream(file);
+            InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
+            BufferedReader reader = new BufferedReader(inputStreamReader);
+    
+            String line = "";
+            ArrayList<String> temp = new ArrayList<String>();
+            while((line = reader.readLine()) != null){
+                temp.add(line);
+            }
+            for (int i = 1; i < temp.size(); i++) {
+                ArrayList<String> tach = new ArrayList<String>(Arrays.asList(temp.get(i).split(", ")));
+                Date ten = (new SimpleDateFormat("E MMM dd HH:mm:ss z yyyy")).parse(tach.get(5));
+                if (ten.equals(thoiDiem)) {
+                    temp.remove(i);
+                }
+            }
+            OutputStream outputStream = new FileOutputStream(file);
+            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream);
+    
+            for (String item : temp){
+                outputStreamWriter.write(item);
+             
+                outputStreamWriter.write("\n");
+            }
+            outputStreamWriter.flush();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+    public static void xoaGiaoDichTheoDiaDiem(String DiaDiem) {
+
+        try {
+            File file = new File(IBoPhanVoiDatabase.giaoDichPath);
+            InputStream inputStream = new FileInputStream(file);
+            InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
+            BufferedReader reader = new BufferedReader(inputStreamReader);
+    
+            String line = "";
+            ArrayList<String> temp = new ArrayList<String>();
+            while((line = reader.readLine()) != null){
+                temp.add(line);
+            }
+            for (int i = 1; i < temp.size(); i++) {
+                ArrayList<String> tach = new ArrayList<String>(Arrays.asList(temp.get(i).split(", ")));
+                String ten = tach.get(6);
+                if (ten.equals(DiaDiem)) {
+                    temp.remove(i);
+                }
+            }
+            OutputStream outputStream = new FileOutputStream(file);
+            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream);
+    
+            for (String item : temp){
+                outputStreamWriter.write(item);
+             
+                outputStreamWriter.write("\n");
+            }
+            outputStreamWriter.flush();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+    public static void xoaGiaoDichTheoThuocTinh(ArrayList<String> tenCacThuocTinh,
+             ArrayList<String> giaTriCacThuocTinh) {
+        try {
+            int index = 0;
+            for (String tenThuocTinh : tenCacThuocTinh) {
+                String tieuChuanHoaTenThuocTinh = tenThuocTinh.toLowerCase().trim();
+                if (tieuChuanHoaTenThuocTinh.equals("ten hang")) {
+                    String tenhang = giaTriCacThuocTinh.get(index);
+                   xoaGiaoDichTheoTenHang(tenhang); 
+                }
+                if (tieuChuanHoaTenThuocTinh.equals("loai hang")) {
+                    String loaiHang = giaTriCacThuocTinh.get(index);
+                    xoaGiaoDichTheoLoaiHang(loaiHang);
+                }
+                if (tieuChuanHoaTenThuocTinh.equals("so luong")) {
+                    int  soLuong = Integer.valueOf(giaTriCacThuocTinh.get(index));
+                    xoaGiaoDichTheoSoLuong(soLuong);
+                }
+                if (tieuChuanHoaTenThuocTinh.equals("loai giao dich")) {
+                    String loaiGiaoDich = giaTriCacThuocTinh.get(index);
+                    xoaGiaoDichTheoLoaiGiaoDich(loaiGiaoDich);
+                }
+                if (tieuChuanHoaTenThuocTinh.equals("gia tong the")) {
+                    int giaTongThe = Integer.valueOf(giaTriCacThuocTinh.get(index));
+                    xoaGiaoDichTheoGiaoTongThe(giaTongThe);
+                }
+                if(tieuChuanHoaTenThuocTinh.equals("thoi diem")){
+                    Date thoiDiem = (new SimpleDateFormat("E MMM dd HH:mm:ss z yyyy"))
+                    .parse(giaTriCacThuocTinh.get(index));
+                    xoaGiaoDichTheoDiaDiem(tieuChuanHoaTenThuocTinh);
+                }
+                if(tieuChuanHoaTenThuocTinh.equals("dia diem")){
+                    String DiaDiem = giaTriCacThuocTinh.get(index);
+                    xoaGiaoDichTheoDiaDiem(DiaDiem);
+                }
+                index += 1;
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
 
 }
