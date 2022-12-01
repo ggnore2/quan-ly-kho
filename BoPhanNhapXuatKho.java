@@ -29,7 +29,7 @@ public class BoPhanNhapXuatKho implements IBoPhanVoiDatabase {
         // tao khoVaHang.txt
         if (!Files.exists(Path.of(IBoPhanVoiDatabase.khoVaHangPath))) {
             try {
-                String contentToWrite = "ten kho,dia chi,ten hang,loai hang,so luong\n";
+                String contentToWrite = "ten kho,dia diem,ten hang,loai hang,so luong\n";
                 Files.writeString(Path.of(IBoPhanVoiDatabase.khoVaHangPath), contentToWrite);
             } catch (Exception e) {
                 System.out.println(e.getMessage());
@@ -264,16 +264,16 @@ public class BoPhanNhapXuatKho implements IBoPhanVoiDatabase {
         return ketQua;
     }
 
-    public static ArrayList<Integer> timKhoVaHangTheoDiaChi(String diaChi) {
+    public static ArrayList<Integer> timKhoVaHangTheoDiaDiem(String diaDiem) {
         ArrayList<Integer> ketQua = new ArrayList<Integer>();
-        String tieuChuanHoaDiaChi = diaChi.toLowerCase().trim();
+        String tieuChuanHoaDiaDiem = diaDiem.toLowerCase().trim();
         try {
             String fileContent = Files.readString(Path.of(IBoPhanVoiDatabase.khoVaHangPath));
             ArrayList<String> listOfKhoVaHang = new ArrayList<String>(Arrays.asList(fileContent.split("\n")));
             for (int i = 1; i < listOfKhoVaHang.size(); i++) {
                 ArrayList<String> entry = new ArrayList<String>(Arrays.asList(listOfKhoVaHang.get(i).split(",")));
-                String entryDiaChi = entry.get(1);
-                if (entryDiaChi.equals(tieuChuanHoaDiaChi)) {
+                String entryDiaDiem = entry.get(1);
+                if (entryDiaDiem.equals(tieuChuanHoaDiaDiem)) {
                     ketQua.add(i);
                 }
             }
@@ -352,8 +352,8 @@ public class BoPhanNhapXuatKho implements IBoPhanVoiDatabase {
                     listOfArrayList.add(BoPhanNhapXuatKho.timKhoVaHangTheoTenKho(tenKho));
                 }
                 if (tieuChuanHoaTenThuocTinh.equals("dia chi")) {
-                    String diaChi = giaTriCacThuocTinh.get(index);
-                    listOfArrayList.add(BoPhanNhapXuatKho.timKhoVaHangTheoDiaChi(diaChi));
+                    String diaDiem = giaTriCacThuocTinh.get(index);
+                    listOfArrayList.add(BoPhanNhapXuatKho.timKhoVaHangTheoDiaDiem(diaDiem));
                 }
                 if (tieuChuanHoaTenThuocTinh.equals("ten hang")) {
                     String tenHang = giaTriCacThuocTinh.get(index);
