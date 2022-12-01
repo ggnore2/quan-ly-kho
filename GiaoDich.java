@@ -85,7 +85,7 @@ public class GiaoDich {
     }
 
     public String toString() {
-        String result = String.format("%s,%s,%d,%s,%f,%s,%s\n", this.getTenHang(), this.getLoaiHang(),
+        String result = String.format("%s,%s,%d,%s,%f,%s,%s", this.getTenHang(), this.getLoaiHang(),
                 this.getSoLuong(), this.getLoaiGiaoDich(), this.getGiaTongThe(), this.getThoiDiem().toString(),
                 this.getDiaDiem());
         return result;
