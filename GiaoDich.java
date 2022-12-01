@@ -84,9 +84,11 @@ public class GiaoDich {
     }
 
     public String toString() {
-        String result = String.format("%s,%s,%d,%s,%f,%s,%s", this.getTenHang(), this.getLoaiHang(),
-                this.getSoLuong(), this.getLoaiGiaoDich(), this.getGiaTongThe(), this.getThoiDiem().toString(),
-                this.getDiaDiem());
+        String result = String.format("%s,%s,%d,%s,%f,%s,%s", this.getTenHang().toLowerCase().trim(),
+                this.getLoaiHang().toLowerCase().trim(),
+                this.getSoLuong(), this.getLoaiGiaoDich().toLowerCase().trim(), this.getGiaTongThe(),
+                this.getThoiDiem().toString(),
+                this.getDiaDiem().toLowerCase().trim());
         return result;
     }
 }

@@ -60,8 +60,9 @@ public class KhoVaHang {
 
     @Override
     public String toString() {
-        String result = String.format("%s,%s,%s,%s,%d", this.getTenKho(), this.getDiaDiem(), this.getTenHang(),
-                this.getLoaiHang(), this.getSoLuong());
+        String result = String.format("%s,%s,%s,%s,%d", this.getTenKho().toLowerCase().trim(), this.getDiaDiem()
+                .toLowerCase().trim(), this.getTenHang().toLowerCase().trim(), this.getLoaiHang().toLowerCase().trim(),
+                this.getSoLuong());
         return result;
     }
 }

@@ -1,5 +1,6 @@
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -37,7 +38,7 @@ public class BoPhanNhapXuatKho implements IBoPhanVoiDatabase {
         }
     }
 
-    // kho
+    // tim kho
     public static ArrayList<Integer> timKhoTheoTenKho(String tenKho) {
         ArrayList<Integer> ketQua = new ArrayList<Integer>();
         String tieuChuanHoaTenKho = tenKho.toLowerCase().trim();
@@ -121,11 +122,11 @@ public class BoPhanNhapXuatKho implements IBoPhanVoiDatabase {
             String tieuChuanHoaTenThuocTinh = tenThuocTinh.toLowerCase().trim();
             if (tieuChuanHoaTenThuocTinh.equals("ten kho")) {
                 String tenKho = giaTriCacThuocTinh.get(index);
-                listOfArrayList.add(BoPhanNhapXuatKho.timKhoTheoTenKho(tenKho));
+                listOfArrayList.add(BoPhanNhapXuatKho.timKhoTheoTenKho(tenKho.toLowerCase().trim()));
             }
             if (tieuChuanHoaTenThuocTinh.equals("dia diem")) {
                 String diaDiem = giaTriCacThuocTinh.get(index);
-                listOfArrayList.add(BoPhanNhapXuatKho.timKhoTheoDiaDiem(diaDiem));
+                listOfArrayList.add(BoPhanNhapXuatKho.timKhoTheoDiaDiem(diaDiem.toLowerCase().trim()));
             }
             if (tieuChuanHoaTenThuocTinh.equals("so luong tong quat")) {
                 int soLuongTongQuat = Integer.valueOf(giaTriCacThuocTinh.get(index));
@@ -149,7 +150,7 @@ public class BoPhanNhapXuatKho implements IBoPhanVoiDatabase {
         return ketQua;
     }
 
-    // hang
+    // tim hang
     public static ArrayList<Integer> timHangTheoTenHang(String tenHang) {
         ArrayList<Integer> ketQua = new ArrayList<Integer>();
         String tieuChuanHoaTenHang = tenHang.toLowerCase().trim();
@@ -217,11 +218,11 @@ public class BoPhanNhapXuatKho implements IBoPhanVoiDatabase {
                 String tieuChuanHoaTenThuocTinh = tenThuocTinh.toLowerCase().trim();
                 if (tieuChuanHoaTenThuocTinh.equals("ten hang")) {
                     String tenHang = giaTriCacThuocTinh.get(index);
-                    listOfArrayList.add(BoPhanNhapXuatKho.timHangTheoTenHang(tenHang));
+                    listOfArrayList.add(BoPhanNhapXuatKho.timHangTheoTenHang(tenHang.toLowerCase().trim()));
                 }
                 if (tieuChuanHoaTenThuocTinh.equals("loai hang")) {
                     String loaiHang = giaTriCacThuocTinh.get(index);
-                    listOfArrayList.add(BoPhanNhapXuatKho.timHangTheoLoaiHang(loaiHang));
+                    listOfArrayList.add(BoPhanNhapXuatKho.timHangTheoLoaiHang(loaiHang.toLowerCase().trim()));
                 }
                 if (tieuChuanHoaTenThuocTinh.equals("so luong")) {
                     int soLuong = Integer.valueOf(giaTriCacThuocTinh.get(index));
@@ -244,7 +245,7 @@ public class BoPhanNhapXuatKho implements IBoPhanVoiDatabase {
         return ketQua;
     }
 
-    // kho va hang
+    // tim kho va hang
     public static ArrayList<Integer> timKhoVaHangTheoTenKho(String tenKho) {
         ArrayList<Integer> ketQua = new ArrayList<Integer>();
         String tieuChuanHoaKho = tenKho.toLowerCase().trim();
@@ -348,20 +349,20 @@ public class BoPhanNhapXuatKho implements IBoPhanVoiDatabase {
             for (String tenThuocTinh : tenCacThuocTinh) {
                 String tieuChuanHoaTenThuocTinh = tenThuocTinh.toLowerCase().trim();
                 if (tieuChuanHoaTenThuocTinh.equals("ten kho")) {
-                    String tenKho = giaTriCacThuocTinh.get(index);
+                    String tenKho = giaTriCacThuocTinh.get(index).toLowerCase().trim();
                     listOfArrayList.add(BoPhanNhapXuatKho.timKhoVaHangTheoTenKho(tenKho));
                 }
-                if (tieuChuanHoaTenThuocTinh.equals("dia chi")) {
+                if (tieuChuanHoaTenThuocTinh.equals("dia diem")) {
                     String diaDiem = giaTriCacThuocTinh.get(index);
-                    listOfArrayList.add(BoPhanNhapXuatKho.timKhoVaHangTheoDiaDiem(diaDiem));
+                    listOfArrayList.add(BoPhanNhapXuatKho.timKhoVaHangTheoDiaDiem(diaDiem.toLowerCase().trim()));
                 }
                 if (tieuChuanHoaTenThuocTinh.equals("ten hang")) {
                     String tenHang = giaTriCacThuocTinh.get(index);
-                    listOfArrayList.add(BoPhanNhapXuatKho.timKhoVaHangTheoTenHang(tenHang));
+                    listOfArrayList.add(BoPhanNhapXuatKho.timKhoVaHangTheoTenHang(tenHang.toLowerCase().trim()));
                 }
                 if (tieuChuanHoaTenThuocTinh.equals("loai hang")) {
                     String loaiHang = giaTriCacThuocTinh.get(index);
-                    listOfArrayList.add(BoPhanNhapXuatKho.timKhoVaHangTheoLoaiHang(loaiHang));
+                    listOfArrayList.add(BoPhanNhapXuatKho.timKhoVaHangTheoLoaiHang(loaiHang.toLowerCase().trim()));
                 }
                 if (tieuChuanHoaTenThuocTinh.equals("so luong")) {
                     int soLuong = Integer.valueOf(giaTriCacThuocTinh.get(index));

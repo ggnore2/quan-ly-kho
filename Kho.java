@@ -52,7 +52,8 @@ public class Kho {
 
     @Override
     public String toString() {
-        String result = String.format("%s,%s,%d,%d", this.getTenKho(), this.getDiaDiem(), this.getSoLuongTongQuat(),
+        String result = String.format("%s,%s,%d,%d", this.getTenKho().toLowerCase().trim(),
+                this.getDiaDiem().toLowerCase().trim(), this.getSoLuongTongQuat(),
                 this.getGioiHan());
         return result;
     }
