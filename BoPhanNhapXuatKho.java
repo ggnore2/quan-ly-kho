@@ -327,8 +327,8 @@ public class BoPhanNhapXuatKho implements IBoPhanVoiDatabase {
         ArrayList<String> listOfKho = new ArrayList<String>(Arrays.asList(fileContent.split("\n")));
         for (int i = 1; i < listOfKho.size(); i++) {
             ArrayList<String> edit = new ArrayList<String>(Arrays.asList(listOfKho.get(i).split(",")));
-            String editTen = edit.get(0);
-            if (editTen.equals(TenKho)) 
+            String editTenKho = edit.get(0);
+            if (editTenKho.equals(tenKho)) 
                {
                 Scanner scanner = new Scanner(system.in)
                 System.out.print("ten kho: ");
@@ -360,7 +360,7 @@ public class BoPhanNhapXuatKho implements IBoPhanVoiDatabase {
         System.out.println(e.getMessage());
     } 
 }
-public static ArrayList<Integer> SuaKhoTheoDiaDiem(String diadiem)
+public static ArrayList<Integer> SuaKhoTheoDiaDiem(String diaDiem)
 {
     try {
         InputStream inputStream = new FileInputStream(file);
@@ -371,7 +371,7 @@ public static ArrayList<Integer> SuaKhoTheoDiaDiem(String diadiem)
         for (int i = 1; i < listOfKho.size(); i++) {
             ArrayList<String> edit = new ArrayList<String>(Arrays.asList(listOfKho.get(i).split(",")));
             String editTenDiaDiem = edit.get(1);
-            if (editTenDiaDiem.equals(diadiem)) 
+            if (editTenDiaDiem.equals(diaDiem)) 
                {
                 Scanner scanner = new Scanner(system.in)
                 System.out.print("ten kho: ");
