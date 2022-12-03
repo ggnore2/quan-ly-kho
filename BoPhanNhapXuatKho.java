@@ -164,7 +164,7 @@ public class BoPhanNhapXuatKho implements IBoPhanVoiDatabase {
                 temp.add(line);
             }
             for (int i = 1; i < temp.size(); i++) {
-                ArrayList<String> tach = new ArrayList<String>(Arrays.asList(temp.get(i).split(", ")));
+                ArrayList<String> tach = new ArrayList<String>(Arrays.asList(temp.get(i).split(",")));
                 String ten = tach.get(0);
                 if (ten.equals(TenKho)) {
                     temp.remove(i);
@@ -199,7 +199,7 @@ public class BoPhanNhapXuatKho implements IBoPhanVoiDatabase {
                 temp.add(line);
             }
             for (int i = 1; i < temp.size(); i++) {
-                ArrayList<String> tach = new ArrayList<String>(Arrays.asList(temp.get(i).split(", ")));
+                ArrayList<String> tach = new ArrayList<String>(Arrays.asList(temp.get(i).split(",")));
                 String ten = tach.get(1);
                 if (ten.equals(DiaDiem)) {
                     temp.remove(i);
@@ -233,7 +233,7 @@ public class BoPhanNhapXuatKho implements IBoPhanVoiDatabase {
                 temp.add(line);
             }
             for (int i = 1; i < temp.size(); i++) {
-                ArrayList<String> tach = new ArrayList<String>(Arrays.asList(temp.get(i).split(", ")));
+                ArrayList<String> tach = new ArrayList<String>(Arrays.asList(temp.get(i).split(",")));
                 int ten = Integer.valueOf(tach.get(2));
                 if (ten == SL) {
                     temp.remove(i);
@@ -266,7 +266,7 @@ public class BoPhanNhapXuatKho implements IBoPhanVoiDatabase {
                 temp.add(line);
             }
             for (int i = 1; i < temp.size(); i++) {
-                ArrayList<String> tach = new ArrayList<String>(Arrays.asList(temp.get(i).split(", ")));
+                ArrayList<String> tach = new ArrayList<String>(Arrays.asList(temp.get(i).split(",")));
                 int ten = Integer.valueOf(tach.get(3));
                 if (ten == GioiHan) {
                     temp.remove(i);
@@ -642,7 +642,7 @@ public static ArrayList<Integer> SuaKhoTheoThuocTinh(ArrayList<String> tenCacThu
                 temp.add(line);
             }
             for (int i = 1; i < temp.size(); i++) {
-                ArrayList<String> tach = new ArrayList<String>(Arrays.asList(temp.get(i).split(", ")));
+                ArrayList<String> tach = new ArrayList<String>(Arrays.asList(temp.get(i).split(",")));
                 String ten = tach.get(0);
                 if (ten.equals(TenHang)) {
                     temp.remove(i);
@@ -677,7 +677,7 @@ public static ArrayList<Integer> SuaKhoTheoThuocTinh(ArrayList<String> tenCacThu
                 temp.add(line);
             }
             for (int i = 1; i < temp.size(); i++) {
-                ArrayList<String> tach = new ArrayList<String>(Arrays.asList(temp.get(i).split(", ")));
+                ArrayList<String> tach = new ArrayList<String>(Arrays.asList(temp.get(i).split(",")));
                 String ten = tach.get(1);
                 if (ten.equals(TenLoaiHang)) {
                     temp.remove(i);
@@ -710,7 +710,7 @@ public static ArrayList<Integer> SuaKhoTheoThuocTinh(ArrayList<String> tenCacThu
                 temp.add(line);
             }
             for (int i = 1; i < temp.size(); i++) {
-                ArrayList<String> tach = new ArrayList<String>(Arrays.asList(temp.get(i).split(", ")));
+                ArrayList<String> tach = new ArrayList<String>(Arrays.asList(temp.get(i).split(",")));
                 int ten = Integer.valueOf(tach.get(2));
                 if (ten == SL) {
                     temp.remove(i);
@@ -742,7 +742,7 @@ public static ArrayList<Integer> SuaKhoTheoThuocTinh(ArrayList<String> tenCacThu
                 temp.add(line);
             }
             for (int i = 1; i < temp.size(); i++) {
-                ArrayList<String> tach = new ArrayList<String>(Arrays.asList(temp.get(i).split(", ")));
+                ArrayList<String> tach = new ArrayList<String>(Arrays.asList(temp.get(i).split(",")));
                 String ten = tach.get(3);
                 if (ten.equals(GhiChu)) {
                     temp.remove(i);
@@ -1105,7 +1105,7 @@ public static ArrayList<Integer> SuaHangTheoSoLuong(int soLuong)
                 temp.add(line);
             }
             for (int i = 1; i < temp.size(); i++) {
-                ArrayList<String> tach = new ArrayList<String>(Arrays.asList(temp.get(i).split(", ")));
+                ArrayList<String> tach = new ArrayList<String>(Arrays.asList(temp.get(i).split(",")));
                 String ten = tach.get(0);
                 if (ten.equals(TenKho)) {
                     temp.remove(i);
@@ -1138,7 +1138,7 @@ public static ArrayList<Integer> SuaHangTheoSoLuong(int soLuong)
                 temp.add(line);
             }
             for (int i = 1; i < temp.size(); i++) {
-                ArrayList<String> tach = new ArrayList<String>(Arrays.asList(temp.get(i).split(", ")));
+                ArrayList<String> tach = new ArrayList<String>(Arrays.asList(temp.get(i).split(",")));
                 String ten = tach.get(1);
                 if (ten.equals(DiaDiem)) {
                     temp.remove(i);
@@ -1172,7 +1172,7 @@ public static ArrayList<Integer> SuaHangTheoSoLuong(int soLuong)
                     temp.add(line);
                 }
                 for (int i = 1; i < temp.size(); i++) {
-                    ArrayList<String> tach = new ArrayList<String>(Arrays.asList(temp.get(i).split(", ")));
+                    ArrayList<String> tach = new ArrayList<String>(Arrays.asList(temp.get(i).split(",")));
                     String ten = tach.get(2);
                     if (ten.equals(TenHang)) {
                         temp.remove(i);
@@ -1206,7 +1206,7 @@ public static ArrayList<Integer> SuaHangTheoSoLuong(int soLuong)
                     temp.add(line);
                 }
                 for (int i = 1; i < temp.size(); i++) {
-                    ArrayList<String> tach = new ArrayList<String>(Arrays.asList(temp.get(i).split(", ")));
+                    ArrayList<String> tach = new ArrayList<String>(Arrays.asList(temp.get(i).split(",")));
                     String ten = tach.get(3);
                     if (ten.equals(LoaiHang)) {
                         temp.remove(i);
@@ -1239,7 +1239,7 @@ public static ArrayList<Integer> SuaHangTheoSoLuong(int soLuong)
                     temp.add(line);
                 }
                 for (int i = 1; i < temp.size(); i++) {
-                    ArrayList<String> tach = new ArrayList<String>(Arrays.asList(temp.get(i).split(", ")));
+                    ArrayList<String> tach = new ArrayList<String>(Arrays.asList(temp.get(i).split(",")));
                     int ten = Integer.valueOf(tach.get(4));
                     if (ten == SL) {
                         temp.remove(i);
