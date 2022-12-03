@@ -226,7 +226,7 @@ public class BoPhanNhapGiaoDich implements IBoPhanVoiDatabase {
                 temp.add(line);
             }
             for (int i = 1; i < temp.size(); i++) {
-                ArrayList<String> tach = new ArrayList<String>(Arrays.asList(temp.get(i).split(", ")));
+                ArrayList<String> tach = new ArrayList<String>(Arrays.asList(temp.get(i).split(",")));
                 String ten = tach.get(0);
                 if (ten.equals(TenHang)) {
                     temp.remove(i);
@@ -259,7 +259,7 @@ public class BoPhanNhapGiaoDich implements IBoPhanVoiDatabase {
                 temp.add(line);
             }
             for (int i = 1; i < temp.size(); i++) {
-                ArrayList<String> tach = new ArrayList<String>(Arrays.asList(temp.get(i).split(", ")));
+                ArrayList<String> tach = new ArrayList<String>(Arrays.asList(temp.get(i).split(",")));
                 String ten = tach.get(1);
                 if (ten.equals(LoaiHang)) {
                     temp.remove(i);
@@ -292,7 +292,7 @@ public class BoPhanNhapGiaoDich implements IBoPhanVoiDatabase {
                 temp.add(line);
             }
             for (int i = 1; i < temp.size(); i++) {
-                ArrayList<String> tach = new ArrayList<String>(Arrays.asList(temp.get(i).split(", ")));
+                ArrayList<String> tach = new ArrayList<String>(Arrays.asList(temp.get(i).split(",")));
                 int  ten = Integer.valueOf(tach.get(2));
                 if (ten == soLuong) {
                     temp.remove(i);
@@ -325,7 +325,7 @@ public class BoPhanNhapGiaoDich implements IBoPhanVoiDatabase {
                 temp.add(line);
             }
             for (int i = 1; i < temp.size(); i++) {
-                ArrayList<String> tach = new ArrayList<String>(Arrays.asList(temp.get(i).split(", ")));
+                ArrayList<String> tach = new ArrayList<String>(Arrays.asList(temp.get(i).split(",")));
                 String ten = tach.get(3);
                 if (ten.equals(LoaiGiaoDich)) {
                     temp.remove(i);
@@ -358,7 +358,7 @@ public class BoPhanNhapGiaoDich implements IBoPhanVoiDatabase {
                 temp.add(line);
             }
             for (int i = 1; i < temp.size(); i++) {
-                ArrayList<String> tach = new ArrayList<String>(Arrays.asList(temp.get(i).split(", ")));
+                ArrayList<String> tach = new ArrayList<String>(Arrays.asList(temp.get(i).split(",")));
                 int  ten = Integer.valueOf(tach.get(4));
                 if (ten == giaTongThe) {
                     temp.remove(i);
@@ -391,7 +391,7 @@ public class BoPhanNhapGiaoDich implements IBoPhanVoiDatabase {
                 temp.add(line);
             }
             for (int i = 1; i < temp.size(); i++) {
-                ArrayList<String> tach = new ArrayList<String>(Arrays.asList(temp.get(i).split(", ")));
+                ArrayList<String> tach = new ArrayList<String>(Arrays.asList(temp.get(i).split(",")));
                 Date ten = (new SimpleDateFormat("E MMM dd HH:mm:ss z yyyy")).parse(tach.get(5));
                 if (ten.equals(thoiDiem)) {
                     temp.remove(i);
@@ -424,7 +424,7 @@ public class BoPhanNhapGiaoDich implements IBoPhanVoiDatabase {
                 temp.add(line);
             }
             for (int i = 1; i < temp.size(); i++) {
-                ArrayList<String> tach = new ArrayList<String>(Arrays.asList(temp.get(i).split(", ")));
+                ArrayList<String> tach = new ArrayList<String>(Arrays.asList(temp.get(i).split(",")));
                 String ten = tach.get(6);
                 if (ten.equals(DiaDiem)) {
                     temp.remove(i);
