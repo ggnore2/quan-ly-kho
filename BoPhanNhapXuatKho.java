@@ -344,6 +344,7 @@ public class BoPhanNhapXuatKho implements IBoPhanVoiDatabase {
                 listOfKho.get(i).setDiaDiem(diadiem);
                 listOfKho.get(i).setSLTQ(SLTQ);
                 listOfKho.get(i).setGioiHan(gioihan);
+                break;
                }
         }
         OutputStream outputStream = new FileOutputStream(file);
@@ -387,6 +388,7 @@ public static ArrayList<Integer> SuaKhoTheoDiaDiem(String diaDiem)
                 listOfKho.get(i).setDiaDiem(diaDiem);
                 listOfKho.get(i).setSLTQ(soLuongTongQuat);
                 listOfKho.get(i).setGioiHan(gioiHan);
+                break;
                }
         }
         OutputStream outputStream = new FileOutputStream(file);
@@ -433,6 +435,7 @@ public static ArrayList<Integer> SuaKhoTheoSoLuongTongQuat(int soLuongTongQuat)
                 listOfKho.get(i).setDiaDiem(diadiem);
                 listOfKho.get(i).setSLTQ(SLTQ);
                 listOfKho.get(i).setGioiHan(gioihan);
+                break;
                }
         }
         OutputStream outputStream = new FileOutputStream(file);
@@ -478,6 +481,7 @@ public static ArrayList<Integer> SuaKhoTheoGioiHan(int gioiHan)
                 listOfKho.get(i).setDiaDiem(diadiem);
                 listOfKho.get(i).setSLTQ(SLTQ);
                 listOfKho.get(i).setGioiHan(gioihan);
+                break;
                }
         }
         OutputStream outputStream = new FileOutputStream(file);
@@ -809,11 +813,11 @@ public static ArrayList<Integer> SuaKhoTheoThuocTinh(ArrayList<String> tenCacThu
                 System.out.print ("SoLuong: ");
                 int SoLuong = Integer.parseInt(sc.nextLine());
                 
-
+                
                 listOfHang.get(i).settenHang(ten);
                 listOfHang.get(i).setloaiHang(LoaiHang);
                 listOfHang.get(i).setsoLuong(SoLuong);
-                
+                break;
                }
         }
         OutputStream outputStream = new FileOutputStream(file);
@@ -855,7 +859,7 @@ public static ArrayList<Integer> SuaHangTheoLoaiHang(String loaiHang)
                 listOfHang.get(i).setten(ten);
                 listOfHang.get(i).setloaiHang(LoaiHang);
                 listOfHang.get(i).setsoLuong(SoLuong);
-                
+                break;
                }
         }
         OutputStream outputStream = new FileOutputStream(file);
@@ -900,7 +904,7 @@ public static ArrayList<Integer> SuaHangTheoSoLuong(int soLuong)
                 listOfHang.get(i).settenHang(ten);
                 listOfHang.get(i).setloaiHang(LoaiHang);
                 listOfHang.get(i).setsoLuong(SoLuong);
-               
+               break;
                }
         }
         OutputStream outputStream = new FileOutputStream(file);
@@ -1325,6 +1329,7 @@ public static ArrayList<Integer> SuaKhoVaHangTheoTenKho(String tenKho)
                 listOfKhoVaHang.get(i).settenHang(ten);
                 listOfKhoVaHang.get(i).setloaiHang(LoaiHang);
                 listOfKhoVaHang.get(i).setsoLuong(SoLuong);
+                break;
                 
                }
         }
@@ -1378,6 +1383,7 @@ public static ArrayList<Integer> SuaKhoVaHangTheoDiaDiem(String diaDiem)
                 listOfKhoVaHang.get(i).settenHang(ten);
                 listOfKhoVaHang.get(i).setloaiHang(LoaiHang);
                 listOfKhoVaHang.get(i).setsoLuong(SoLuong);
+                break;
                 
                 
                }
@@ -1435,7 +1441,7 @@ public static ArrayList<Integer> SuaKhoVaHangTheoTenHang(String tenHang)
                 listOfKhoVaHang.get(i).settenHang(ten);
                 listOfKhoVaHang.get(i).setloaiHang(LoaiHang);
                 listOfKhoVaHang.get(i).setsoLuong(SoLuong);
-               
+               break;
                }
         }
         OutputStream outputStream = new FileOutputStream(file);
@@ -1490,6 +1496,7 @@ public static ArrayList<Integer> SuaKhoVaHangTheoLoaiHang(String loaiHang)
                 listOfKhoVaHang.get(i).settenHang(ten);
                 listOfKhoVaHang.get(i).setloaiHang(LoaiHang);
                 listOfKhoVaHang.get(i).setsoLuong(SoLuong);
+                break;
                }
         }
         OutputStream outputStream = new FileOutputStream(file);
