@@ -951,3 +951,468 @@ for (String tenThuocTinh : tenCacThuocTinh) {
     System.out.println(e.getMessage());
 }
 }
+
+//them giao dich
+
+public static ArrayList<Integer> themGiaoDichTheoTenHang(String tenHang) 
+{
+    try {
+        InputStream inputStream = new FileInputStream(file);
+        InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
+        BufferedReader reader = new BufferedReader(inputStreamReader);
+        String fileContent = Files.readString(Path.of(IBoPhanVoiDatabase.giaoDichPath));
+        ArrayList<String> listOfGiaoDich = new ArrayList<String>(Arrays.asList(fileContent.split("\n")));
+        for (int i = 1; i < listOfGiaoDich.size(); i++) {
+            ArrayList<String> edit = new ArrayList<String>(Arrays.asList(listOfGiaoDich.get(i).split(",")));
+            String editTenHang = edit.get(0);
+            if (editTenHang.equals(tenHang)) 
+               {
+                Scanner scanner = new Scanner(system.in)
+                System.out.print("ten hang: ");
+                String tenhang = sc.nextLine();
+                System.out.print("loai hang: ");
+                String loaihang = sc.nextLine();
+                System.out.print ("so luong: ");
+                int soluong = Integer.parseInt(sc.nextLine());
+                System.out.print("loai giao dich: ");
+                String loaigiaodich = sc.nextLine();
+                System.out.print("gia tong the: ");
+                double giatongthe = Double.parseDouble(sc.nextLine());
+                DateFormat dateFormat = null;
+                date date = new date ();
+                dateFormat = new SimpleDateFormat("E MMM dd HH:mm:ss z yyyy");
+                System.out.print("thoi diem: " + dateFormat.format(date));
+                System.out.print("dia diem: ");
+                String diadiem = sc.nextLine();
+               
+
+                listOfGiaoDich.get(i).settenHang(tenhang);
+                listOfGiaoDich.get(i).setloaiHang(loaihang);
+                listOfGiaoDich.get(i).setsoLuong(soluong);
+                listOfGiaoDich.get(i).setloaiGiaoDich(loaigiaodich);
+                listOfGiaoDich.get(i).setgiaTongThe(giatongthe);
+                listOfGiaoDich.get(i).setthoiDiem(thoidiem);
+                listOfGiaoDich.get(i).setdiaDiem(diadiem);
+                break;
+               
+               }
+        }
+        OutputStream outputStream = new FileOutputStream(file);
+        OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream);
+
+        for (String item : temp){
+            outputStreamWriter.write(item);
+         
+            outputStreamWriter.write("\n");
+        }
+        outputStreamWriter.flush();
+    } catch (Exception e) 
+    {
+        System.out.println(e.getMessage());
+    } 
+}
+
+
+public static ArrayList<Integer> themGiaoDichTheoLoaiHang(String loaiHang) 
+{
+    try {
+        InputStream inputStream = new FileInputStream(file);
+        InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
+        BufferedReader reader = new BufferedReader(inputStreamReader);
+        String fileContent = Files.readString(Path.of(IBoPhanVoiDatabase.giaoDichPath));
+        ArrayList<String> listOfGiaoDich = new ArrayList<String>(Arrays.asList(fileContent.split("\n")));
+        for (int i = 1; i < listOfGiaoDich.size(); i++) {
+            ArrayList<String> edit = new ArrayList<String>(Arrays.asList(listOfGiaoDich.get(i).split(",")));
+            String editLoaiHang = edit.get(1);
+            if (editLoaiHang.equals(loaiHang)) 
+               {
+                Scanner scanner = new Scanner(system.in)
+                System.out.print("ten hang: ");
+                String tenhang = sc.nextLine();
+                System.out.print("loai hang: ");
+                String loaihang = sc.nextLine();
+                System.out.print ("so luong: ");
+                int soluong = Integer.parseInt(sc.nextLine());
+                System.out.print("loai giao dich: ");
+                String loaigiaodich = sc.nextLine();
+                System.out.print("gia tong the: ");
+                double giatongthe = Double.parseDouble(sc.nextLine());
+                date date = new Date();
+                DateFormat dateFormat = null;
+                dateFormat = new SimpleDateFormat("E MMM dd HH:mm:ss z yyyy");
+                System.out.print("thoi diem: " + dateFormat.format(date));
+                System.out.print("dia diem: ");
+                String diadiem = sc.nextLine();
+               
+
+                listOfGiaoDich.get(i).settenHang(tenhang);
+                listOfGiaoDich.get(i).setloaiHang(loaihang);
+                listOfGiaoDich.get(i).setsoLuong(soluong);
+                listOfGiaoDich.get(i).setloaiGiaoDich(loaigiaodich);
+                listOfGiaoDich.get(i).setgiaTongThe(giatongthe);
+                listOfGiaoDich.get(i).setthoiDiem(thoidiem);
+                listOfGiaoDich.get(i).setdiaDiem(diadiem);
+                break;
+               
+               }
+        }
+        OutputStream outputStream = new FileOutputStream(file);
+        OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream);
+
+        for (String item : temp){
+            outputStreamWriter.write(item);
+         
+            outputStreamWriter.write("\n");
+        }
+        outputStreamWriter.flush();
+    } catch (Exception e) 
+    {
+        System.out.println(e.getMessage());
+    } 
+}
+
+
+public static ArrayList<Integer> themGiaoDichTheoSoLuong(int soLuong) 
+{
+    try {
+        InputStream inputStream = new FileInputStream(file);
+        InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
+        BufferedReader reader = new BufferedReader(inputStreamReader);
+        String fileContent = Files.readString(Path.of(IBoPhanVoiDatabase.giaoDichPath));
+        ArrayList<String> listOfGiaoDich = new ArrayList<String>(Arrays.asList(fileContent.split("\n")));
+        for (int i = 1; i < listOfGiaoDich.size(); i++) {
+            ArrayList<String> edit = new ArrayList<String>(Arrays.asList(listOfGiaoDich.get(i).split(",")));
+            int editSoLuong = Integer.ValueOf(edit.get(2));
+            if (editSoLuong = soLuong)
+               {
+                Scanner scanner = new Scanner(system.in)
+                System.out.print("ten hang: ");
+                String tenhang = sc.nextLine();
+                System.out.print("loai hang: ");
+                String loaihang = sc.nextLine();
+                System.out.print ("so luong: ");
+                int soluong = Integer.parseInt(sc.nextLine());
+                System.out.print("loai giao dich: ");
+                String loaigiaodich = sc.nextLine();
+                System.out.print("gia tong the: ");
+                double giatongthe = Double.parseDouble(sc.nextLine());
+                date date = new Date();
+                DateFormat dateFormat = null;
+                dateFormat = new SimpleDateFormat("E MMM dd HH:mm:ss z yyyy");
+                System.out.print("thoi diem: " + dateFormat.format(date));
+                System.out.print("dia diem: ");
+                String diadiem = sc.nextLine();
+               
+
+                listOfGiaoDich.get(i).settenHang(tenhang);
+                listOfGiaoDich.get(i).setloaiHang(loaihang);
+                listOfGiaoDich.get(i).setsoLuong(soluong);
+                listOfGiaoDich.get(i).setloaiGiaoDich(loaigiaodich);
+                listOfGiaoDich.get(i).setgiaTongThe(giatongthe);
+                listOfGiaoDich.get(i).setthoiDiem(thoidiem);
+                listOfGiaoDich.get(i).setdiaDiem(diadiem);
+                break;
+               
+               }
+        }
+        OutputStream outputStream = new FileOutputStream(file);
+        OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream);
+
+        for (String item : temp){
+            outputStreamWriter.write(item);
+         
+            outputStreamWriter.write("\n");
+        }
+        outputStreamWriter.flush();
+    } catch (Exception e) 
+    {
+        System.out.println(e.getMessage());
+
+    } 
+
+}
+
+
+public static ArrayList<Integer> themGiaoDichTheoLoaiGiaoDich(String loaiGiaoDich) 
+{
+    try {
+        InputStream inputStream = new FileInputStream(file);
+        InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
+        BufferedReader reader = new BufferedReader(inputStreamReader);
+        String fileContent = Files.readString(Path.of(IBoPhanVoiDatabase.giaoDichPath));
+        ArrayList<String> listOfGiaoDich = new ArrayList<String>(Arrays.asList(fileContent.split("\n")));
+        for (int i = 1; i < listOfGiaoDich.size(); i++) {
+            ArrayList<String> edit = new ArrayList<String>(Arrays.asList(listOfGiaoDich.get(i).split(",")));
+            String editLoaiGiaoDich = edit.get(3);
+            if (editLoaiGiaoDich.equals(loaiGiaoDich)) 
+               {
+                Scanner scanner = new Scanner(system.in)
+                System.out.print("ten hang: ");
+                String tenhang = sc.nextLine();
+                System.out.print("loai hang: ");
+                String loaihang = sc.nextLine();
+                System.out.print ("so luong: ");
+                int soluong = Integer.parseInt(sc.nextLine());
+                System.out.print("loai giao dich: ");
+                String loaigiaodich = sc.nextLine();
+                System.out.print("gia tong the: ");
+                double giatongthe = Double.parseDouble(sc.nextLine());
+                date date = new Date();
+                DateFormat dateFormat = null;
+                dateFormat = new SimpleDateFormat("E MMM dd HH:mm:ss z yyyy");
+                System.out.print("thoi diem: " + dateFormat.format(date));
+                System.out.print("dia diem: ");
+                String diadiem = sc.nextLine();
+               
+
+                listOfGiaoDich.get(i).settenHang(tenhang);
+                listOfGiaoDich.get(i).setloaiHang(loaihang);
+                listOfGiaoDich.get(i).setsoLuong(soluong);
+                listOfGiaoDich.get(i).setloaiGiaoDich(loaigiaodich);
+                listOfGiaoDich.get(i).setgiaTongThe(giatongthe);
+                listOfGiaoDich.get(i).setthoiDiem(thoidiem);
+                listOfGiaoDich.get(i).setdiaDiem(diadiem);
+                break;
+               
+               }
+        }
+        OutputStream outputStream = new FileOutputStream(file);
+        OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream);
+
+        for (String item : temp){
+            outputStreamWriter.write(item);
+         
+            outputStreamWriter.write("\n");
+        }
+        outputStreamWriter.flush();
+    } catch (Exception e) 
+    {
+        System.out.println(e.getMessage());
+    } 
+}
+
+
+public static ArrayList<Integer> themGiaoDichTheoGiaTongThe(double giaTongThe) 
+{
+    try {
+        InputStream inputStream = new FileInputStream(file);
+        InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
+        BufferedReader reader = new BufferedReader(inputStreamReader);
+        String fileContent = Files.readString(Path.of(IBoPhanVoiDatabase.giaoDichPath));
+        ArrayList<String> listOfGiaoDich = new ArrayList<String>(Arrays.asList(fileContent.split("\n")));
+        for (int i = 1; i < listOfGiaoDich.size(); i++) {
+            ArrayList<String> edit = new ArrayList<String>(Arrays.asList(listOfGiaoDich.get(i).split(",")));
+            Double editGiaTongThe = Double.ValueOf(edit.get(4));
+            if (editGiaTongThe == giaTongThe) 
+               {
+                Scanner scanner = new Scanner(system.in)
+                System.out.print("ten hang: ");
+                String tenhang = sc.nextLine();
+                System.out.print("loai hang: ");
+                String loaihang = sc.nextLine();
+                System.out.print ("so luong: ");
+                int soluong = Integer.parseInt(sc.nextLine());
+                System.out.print("loai giao dich: ");
+                String loaigiaodich = sc.nextLine();
+                System.out.print("gia tong the: ");
+                double giatongthe = Double.parseDouble(sc.nextLine());
+                date date = new Date();
+                DateFormat dateFormat = null;
+                dateFormat = new SimpleDateFormat("E MMM dd HH:mm:ss z yyyy");
+                System.out.print("thoi diem: " + dateFormat.format(date));
+                System.out.print("dia diem: ");
+                String diadiem = sc.nextLine();
+               
+
+                listOfGiaoDich.get(i).settenHang(tenhang);
+                listOfGiaoDich.get(i).setloaiHang(loaihang);
+                listOfGiaoDich.get(i).setsoLuong(soluong);
+                listOfGiaoDich.get(i).setloaiGiaoDich(loaigiaodich);
+                listOfGiaoDich.get(i).setgiaTongThe(giatongthe);
+                listOfGiaoDich.get(i).setthoiDiem(thoidiem);
+                listOfGiaoDich.get(i).setdiaDiem(diadiem);
+                break;
+               
+               }
+        }
+        OutputStream outputStream = new FileOutputStream(file);
+        OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream);
+
+        for (String item : temp){
+            outputStreamWriter.write(item);
+         
+            outputStreamWriter.write("\n");
+        }
+        outputStreamWriter.flush();
+    } catch (Exception e) 
+    {
+        System.out.println(e.getMessage());
+    } 
+}
+
+
+public static ArrayList<Integer> themGiaoDichTheoThoiDiem(date thoiDiem) 
+{
+    try {
+        InputStream inputStream = new FileInputStream(file);
+        InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
+        BufferedReader reader = new BufferedReader(inputStreamReader);
+        String fileContent = Files.readString(Path.of(IBoPhanVoiDatabase.giaoDichPath));
+        ArrayList<String> listOfGiaoDich = new ArrayList<String>(Arrays.asList(fileContent.split("\n")));
+        for (int i = 1; i < listOfGiaoDich.size(); i++) {
+            ArrayList<String> edit = new ArrayList<String>(Arrays.asList(listOfGiaoDich.get(i).split(",")));
+            Date editThoiDiem = (new SimpleDateFormat("E MMM dd HH:mm:ss z yyyy")).parse(edit.get(5));
+            if (editThoiDiem.equals(thoiDiem)) 
+               {
+                Scanner scanner = new Scanner(system.in)
+                System.out.print("ten hang: ");
+                String tenhang = sc.nextLine();
+                System.out.print("loai hang: ");
+                String loaihang = sc.nextLine();
+                System.out.print ("so luong: ");
+                int soluong = Integer.parseInt(sc.nextLine());
+                System.out.print("loai giao dich: ");
+                String loaigiaodich = sc.nextLine();
+                System.out.print("gia tong the: ");
+                double giatongthe = Double.parseDouble(sc.nextLine());
+                date date = new Date();
+                DateFormat dateFormat = null;
+                dateFormat = new SimpleDateFormat("E MMM dd HH:mm:ss z yyyy");
+                System.out.print("thoi diem: " + dateFormat.format(date));
+                System.out.print("dia diem: ");
+                String diadiem = sc.nextLine();
+               
+
+                listOfGiaoDich.get(i).settenHang(tenhang);
+                listOfGiaoDich.get(i).setloaiHang(loaihang);
+                listOfGiaoDich.get(i).setsoLuong(soluong);
+                listOfGiaoDich.get(i).setloaiGiaoDich(loaigiaodich);
+                listOfGiaoDich.get(i).setgiaTongThe(giatongthe);
+                listOfGiaoDich.get(i).setthoiDiem(thoidiem);
+                listOfGiaoDich.get(i).setdiaDiem(diadiem);
+                break;
+               
+               }
+        }
+        OutputStream outputStream = new FileOutputStream(file);
+        OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream);
+
+        for (String item : temp){
+            outputStreamWriter.write(item);
+         
+            outputStreamWriter.write("\n");
+        }
+        outputStreamWriter.flush();
+    } catch (Exception e) 
+    {
+        System.out.println(e.getMessage());
+    } 
+}
+
+
+public static ArrayList<Integer> themGiaoDichTheoDiaDiem(String diaDiem) 
+{
+    try {
+        InputStream inputStream = new FileInputStream(file);
+        InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
+        BufferedReader reader = new BufferedReader(inputStreamReader);
+        String fileContent = Files.readString(Path.of(IBoPhanVoiDatabase.giaoDichPath));
+        ArrayList<String> listOfGiaoDich = new ArrayList<String>(Arrays.asList(fileContent.split("\n")));
+        for (int i = 1; i < listOfGiaoDich.size(); i++) {
+            ArrayList<String> edit = new ArrayList<String>(Arrays.asList(listOfGiaoDich.get(i).split(",")));
+            String editDiaDiem = edit.get(6);
+            if (editDiaDiem.equals(diaDiem))
+               {
+                Scanner scanner = new Scanner(system.in)
+                System.out.print("ten hang: ");
+                String tenhang = sc.nextLine();
+                System.out.print("loai hang: ");
+                String loaihang = sc.nextLine();
+                System.out.print ("so luong: ");
+                int soluong = Integer.parseInt(sc.nextLine());
+                System.out.print("loai giao dich: ");
+                String loaigiaodich = sc.nextLine();
+                System.out.print("gia tong the: ");
+                double giatongthe = Double.parseDouble(sc.nextLine());
+                date date = new Date();
+                DateFormat dateFormat = null;
+                dateFormat = new SimpleDateFormat("E MMM dd HH:mm:ss z yyyy");
+                System.out.print("thoi diem: " + dateFormat.format(date));
+                System.out.print("dia diem: ");
+                String diadiem = sc.nextLine();
+               
+
+                listOfGiaoDich.get(i).settenHang(tenhang);
+                listOfGiaoDich.get(i).setloaiHang(loaihang);
+                listOfGiaoDich.get(i).setsoLuong(soluong);
+                listOfGiaoDich.get(i).setloaiGiaoDich(loaigiaodich);
+                listOfGiaoDich.get(i).setgiaTongThe(giatongthe);
+                listOfGiaoDich.get(i).setthoiDiem(thoidiem);
+                listOfGiaoDich.get(i).setdiaDiem(diadiem);
+                break;
+               
+               }
+        }
+        OutputStream outputStream = new FileOutputStream(file);
+        OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream);
+
+        for (String item : temp){
+            outputStreamWriter.write(item);
+         
+            outputStreamWriter.write("\n");
+        }
+        outputStreamWriter.flush();
+    } catch (Exception e) 
+    {
+        System.out.println(e.getMessage());
+    } 
+}
+
+public static ArrayList<Integer> themGiaoDichTheoThuocTinh(ArrayList<String> tenCacThuocTinh,
+ArrayList<String> giaTriCacThuocTinh) {
+ArrayList<ArrayList<Integer>> listOfArrayList = new ArrayList<ArrayList<Integer>>();
+ArrayList<Integer> ketQua = new ArrayList<Integer>();
+try {
+int index = 0;
+for (String tenThuocTinh : tenCacThuocTinh) {
+    String tieuChuanHoaTenThuocTinh = tenThuocTinh.toLowerCase().trim();
+    if (tieuChuanHoaTenThuocTinh.equals("ten hang")) {
+        String tenHang = giaTriCacThuocTinh.get(index);
+        listOfArrayList.add(BoPhanNhapGiaoDich.SuaGiaoDichTheoTenHang(tenHang.toLowerCase().trim()));
+    }
+    if (tieuChuanHoaTenThuocTinh.equals("loai hang")) {
+        String loaiHang = giaTriCacThuocTinh.get(index);
+        listOfArrayList.add(BoPhanNhapGiaoDich.SuaGiaoDichTheoLoaiHang(loaiHang.toLowerCase().trim()));
+
+    }
+    if (tieuChuanHoaTenThuocTinh.equals("so luong")) {
+        int soLuong = Integer.valueOf(giaTriCacThuocTinh.get(index));
+        listOfArrayList.add(BoPhanNhapGiaoDich.SuaGiaoDichTheoSoLuong(soLuong));
+
+    }
+    if (tieuChuanHoaTenThuocTinh.equals("loai giao dich")) {
+        String loaiGiaoDich = giaTriCacThuocTinh.get(index);
+        listOfArrayList.add(BoPhanNhapGiaoDich.SuaGiaoDichTheoLoaiGiaoDich(loaiGiaoDich.toLowerCase()
+                .trim()));
+
+    }
+    if (tieuChuanHoaTenThuocTinh.equals("gia tong the")) {
+        double giaTongThe = Double.valueOf(giaTriCacThuocTinh.get(index));
+        listOfArrayList.add(BoPhanNhapGiaoDich.SuaGiaoDichTheoGiaTongThe(giaTongThe));
+
+    }
+    if (tieuChuanHoaTenThuocTinh.equals("thoi diem")) {
+        Date thoiDiem = (new SimpleDateFormat("E MMM dd HH:mm:ss z yyyy"))
+                .parse(giaTriCacThuocTinh.get(index));
+        listOfArrayList.add(BoPhanNhapGiaoDich.SuaGiaoDichTheoThoiDiem(thoiDiem));
+    }
+    if (tieuChuanHoaTenThuocTinh.equals("dia diem")) {
+        String diaDiem = giaTriCacThuocTinh.get(index);
+        listOfArrayList.add(BoPhanNhapGiaoDich.SuaGiaoDichTheoDiaDiem(diaDiem.toLowerCase().trim()));
+    }
+    index += 1;
+}
+} catch (Exception e) {
+    System.out.println(e.getMessage());
+}
+}
