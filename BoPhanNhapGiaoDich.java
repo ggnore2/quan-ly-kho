@@ -489,9 +489,10 @@ public class BoPhanNhapGiaoDich implements IBoPhanVoiDatabase {
 }
 //sua giao dich
 
-public static ArrayList<Integer> SuaGiaoDichTheoTenHang(String tenHang) 
-{
+public static ArrayList<Integer> SuaGiaoDichTheoTenHang(String tenHang) {
+    ArrayList<String> lichsu = new ArrayList<String>();
     try {
+        File file = new File(IBoPhanVoiDatabase.giaoDichPath);
         InputStream inputStream = new FileInputStream(file);
         InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
         BufferedReader reader = new BufferedReader(inputStreamReader);
@@ -529,13 +530,14 @@ public static ArrayList<Integer> SuaGiaoDichTheoTenHang(String tenHang)
                 listOfGiaoDich.get(i).setthoiDiem(thoidiem);
                 listOfGiaoDich.get(i).setdiaDiem(diadiem);
                 break;
+                lichsu.add(i);
                
                }
         }
         OutputStream outputStream = new FileOutputStream(file);
         OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream);
 
-        for (String item : temp){
+        for (String item : lichsu){
             outputStreamWriter.write(item);
          
             outputStreamWriter.write("\n");
@@ -548,9 +550,10 @@ public static ArrayList<Integer> SuaGiaoDichTheoTenHang(String tenHang)
 }
 
 
-public static ArrayList<Integer> SuaGiaoDichTheoLoaiHang(String loaiHang) 
-{
+public static ArrayList<Integer> SuaGiaoDichTheoLoaiHang(String loaiHang) {
+    ArrayList<String> lichsu = new ArrayList<String>();
     try {
+        File file = new File(IBoPhanVoiDatabase.giaoDichPath);
         InputStream inputStream = new FileInputStream(file);
         InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
         BufferedReader reader = new BufferedReader(inputStreamReader);
@@ -588,13 +591,14 @@ public static ArrayList<Integer> SuaGiaoDichTheoLoaiHang(String loaiHang)
                 listOfGiaoDich.get(i).setthoiDiem(thoidiem);
                 listOfGiaoDich.get(i).setdiaDiem(diadiem);
                 break;
+                lichsu.add(i);
                
                }
         }
         OutputStream outputStream = new FileOutputStream(file);
         OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream);
 
-        for (String item : temp){
+        for (String item : lichsu){
             outputStreamWriter.write(item);
          
             outputStreamWriter.write("\n");
@@ -607,9 +611,10 @@ public static ArrayList<Integer> SuaGiaoDichTheoLoaiHang(String loaiHang)
 }
 
 
-public static ArrayList<Integer> SuaGiaoDichTheoSoLuong(int soLuong) 
-{
+public static ArrayList<Integer> SuaGiaoDichTheoSoLuong(int soLuong) {
+    ArrayList<String> lichsu = new ArrayList<String>();
     try {
+        File file = new File(IBoPhanVoiDatabase.giaoDichPath);
         InputStream inputStream = new FileInputStream(file);
         InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
         BufferedReader reader = new BufferedReader(inputStreamReader);
@@ -647,13 +652,14 @@ public static ArrayList<Integer> SuaGiaoDichTheoSoLuong(int soLuong)
                 listOfGiaoDich.get(i).setthoiDiem(thoidiem);
                 listOfGiaoDich.get(i).setdiaDiem(diadiem);
                 break;
+                lichsu.add(i);
                
                }
         }
         OutputStream outputStream = new FileOutputStream(file);
         OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream);
 
-        for (String item : temp){
+        for (String item : lichsu){
             outputStreamWriter.write(item);
          
             outputStreamWriter.write("\n");
@@ -668,9 +674,10 @@ public static ArrayList<Integer> SuaGiaoDichTheoSoLuong(int soLuong)
 }
 
 
-public static ArrayList<Integer> SuaGiaoDichTheoLoaiGiaoDich(String loaiGiaoDich) 
-{
+public static ArrayList<Integer> SuaGiaoDichTheoLoaiGiaoDich(String loaiGiaoDich) {
+    ArrayList<String> lichsu = new ArrayList<String>();
     try {
+         File file = new File(IBoPhanVoiDatabase.giaoDichPath);
         InputStream inputStream = new FileInputStream(file);
         InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
         BufferedReader reader = new BufferedReader(inputStreamReader);
@@ -708,13 +715,14 @@ public static ArrayList<Integer> SuaGiaoDichTheoLoaiGiaoDich(String loaiGiaoDich
                 listOfGiaoDich.get(i).setthoiDiem(thoidiem);
                 listOfGiaoDich.get(i).setdiaDiem(diadiem);
                 break;
+                lichsu.add(i);
                
                }
         }
         OutputStream outputStream = new FileOutputStream(file);
         OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream);
 
-        for (String item : temp){
+        for (String item : lichsu){
             outputStreamWriter.write(item);
          
             outputStreamWriter.write("\n");
@@ -728,8 +736,9 @@ public static ArrayList<Integer> SuaGiaoDichTheoLoaiGiaoDich(String loaiGiaoDich
 
 
 public static ArrayList<Integer> SuaGiaoDichTheoGiaTongThe(double giaTongThe) 
-{
+{  ArrayList<String> lichsu = new ArrayList<String>();
     try {
+        File file = new File(IBoPhanVoiDatabase.giaoDichPath);
         InputStream inputStream = new FileInputStream(file);
         InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
         BufferedReader reader = new BufferedReader(inputStreamReader);
@@ -767,13 +776,14 @@ public static ArrayList<Integer> SuaGiaoDichTheoGiaTongThe(double giaTongThe)
                 listOfGiaoDich.get(i).setthoiDiem(thoidiem);
                 listOfGiaoDich.get(i).setdiaDiem(diadiem);
                 break;
+                lichsu.add(i);
                
                }
         }
         OutputStream outputStream = new FileOutputStream(file);
         OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream);
 
-        for (String item : temp){
+        for (String item : lichsu){
             outputStreamWriter.write(item);
          
             outputStreamWriter.write("\n");
@@ -787,8 +797,9 @@ public static ArrayList<Integer> SuaGiaoDichTheoGiaTongThe(double giaTongThe)
 
 
 public static ArrayList<Integer> SuaGiaoDichTheoThoiDiem(date thoiDiem) 
-{
+{ ArrayList<String> lichsu = new ArrayList<String>();
     try {
+        File file = new File(IBoPhanVoiDatabase.giaoDichPath);
         InputStream inputStream = new FileInputStream(file);
         InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
         BufferedReader reader = new BufferedReader(inputStreamReader);
@@ -826,13 +837,14 @@ public static ArrayList<Integer> SuaGiaoDichTheoThoiDiem(date thoiDiem)
                 listOfGiaoDich.get(i).setthoiDiem(thoidiem);
                 listOfGiaoDich.get(i).setdiaDiem(diadiem);
                 break;
+                lichsu.add(i);
                
                }
         }
         OutputStream outputStream = new FileOutputStream(file);
         OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream);
 
-        for (String item : temp){
+        for (String item : lichsu){
             outputStreamWriter.write(item);
          
             outputStreamWriter.write("\n");
@@ -846,8 +858,9 @@ public static ArrayList<Integer> SuaGiaoDichTheoThoiDiem(date thoiDiem)
 
 
 public static ArrayList<Integer> SuaGiaoDichTheoDiaDiem(String diaDiem) 
-{
-    try {
+{ ArrayList<String> lichsu = new ArrayList<String>();
+    try { 
+        File file = new File(IBoPhanVoiDatabase.giaoDichPath);
         InputStream inputStream = new FileInputStream(file);
         InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
         BufferedReader reader = new BufferedReader(inputStreamReader);
@@ -885,13 +898,14 @@ public static ArrayList<Integer> SuaGiaoDichTheoDiaDiem(String diaDiem)
                 listOfGiaoDich.get(i).setthoiDiem(thoidiem);
                 listOfGiaoDich.get(i).setdiaDiem(diadiem);
                 break;
+                lichsu.add(i);
                
                }
         }
         OutputStream outputStream = new FileOutputStream(file);
         OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream);
 
-        for (String item : temp){
+        for (String item : lichsu){
             outputStreamWriter.write(item);
          
             outputStreamWriter.write("\n");
