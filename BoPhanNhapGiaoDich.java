@@ -486,10 +486,10 @@ public class BoPhanNhapGiaoDich implements IBoPhanVoiDatabase {
     }
 
 
-}
-//sua giao dich
+//sua
 
-public static ArrayList<Integer> SuaGiaoDichTheoTenHang(String tenHang) {
+
+    public static ArrayList<Integer> suaGiaoDichTheoTenHang (String tenHang) {
     ArrayList<String> lichsu = new ArrayList<String>();
     try {
         File file = new File(IBoPhanVoiDatabase.giaoDichPath);
